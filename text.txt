@@ -1,0 +1,169 @@
+Python 
+
+Declaration variables
+Variable = value
+Exemple :
+x = "Hello World"	str
+x = 20	int
+x = 20.5	float
+x = 1j	complex
+x = ["apple", "banana", "cherry"]	list
+x = ("apple", "banana", "cherry")	tuple
+x = range(6)	range
+x = {"name" : "John", "age" : 36}	dict
+x = {"apple", "banana", "cherry"}	set
+x = frozenset({"apple", "banana", "cherry"})	frozenset
+x = True	bool
+x = b"Hello"	bytes
+x = bytearray(5)	bytearray
+x = memoryview(bytes(5))	memoryview
+x = None	NoneType
+
+La fonction print
+La fonction print en Python est utilisée pour afficher des informations à la sortie standard, généralement sur la console. Voici une explication simple de la fonction print avec un exemple :
+Fonction print en Python :
+La syntaxe de base de la fonction print est la suivante :
+print(objet1, objet2, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+# Exemple d'utilisation simple de la fonction print
+1)-
+nom = "Alice"
+age = 25
+print("Bienvenue,", nom, "!", "Vous avez", age, "ans.")
+
+Resultat
+Bienvenue, Alice ! Vous avez 25 ans.
+2)-
+x = "amine"
+y = "el hassak"
+age =  24
+print("prénom est : {} nome est : {} age de {}".format(x, y,âgé))
+print(x, y, sep=‘|’,end=‘.\n’)
+Resultat
+Prénom: Bob | Ville: Paris.
+3)-
+  x = float(10)
+4)-
+nom = "Alice"
+age = 25
+note = 95.5
+print("Nom: {}, Age: {}, Note: {:.2f}".format(nom, age, note))
+
+
+————————————————————————————————————————————————————————————————————————————————————
+Methodes :
+methode pour les chaine de caractères
+
+capitalize() : Convertit le premier caractère en majuscule et le reste en minuscules.
+phrase = "bonjour le monde"
+print(phrase.capitalize())
+# Résultat : Bonjour le monde
+
+upper() et lower() : Convertit tous les caractères en majuscules ou en minuscules, respectivement.
+phrase = "Bonjour le monde"
+print(phrase.upper())
+print(phrase.lower())
+# Résultat : BONJOUR LE MONDE, bonjour le monde
+
+replace(old, new) : Remplace toutes les occurrences de l'ancienne sous-chaîne par la nouvelle.
+phrase = "Bonjour le monde"
+nouvelle_phrase = phrase.replace("Bonjour", "Salut")
+print(nouvelle_phrase)
+# Résultat : Salut le monde
+
+split(separator) : Divise la chaîne en une liste de sous-chaînes en fonction du séparateur fourni.
+phrase = "Python est génial"
+mots = phrase.split(' ')
+print(mots)
+# Résultat : ['Python', 'est', 'génial']
+
+startswith(prefix) et endswith(suffix) : Vérifie si la chaîne commence ou se termine par le préfixe ou le suffixe fourni.
+phrase = "Bonjour le monde"
+print(phrase.startswith("Bonjour"))
+print(phrase.endswith("monde"))
+# Résultat : True, True
+
+strip([chars]) : Retire les espaces ou les caractères spécifiés aux extrémités de la chaîne. Si chars n'est pas spécifié, les espaces sont retirés par défaut.
+phrase = "   Bonjour le monde   "
+nouvelle_phrase = phrase.strip()
+print(nouvelle_phrase)
+# Résultat : "Bonjour le monde"
+
+count(substring) : Compte le nombre d'occurrences d'une sous-chaîne dans la chaîne.
+phrase = "Python, Python, Python"
+occurrences = phrase.count("Python")
+print(occurrences)
+# Résultat : 3
+
+find(substring) et index(substring) : Recherchent la première occurrence d'une sous-chaîne et renvoient son indice. La différence est que find renvoie -1 si la sous-chaîne n'est pas trouvée, tandis que index génère une exception ValueError
+phrase = "Bonjour le monde"
+indice = phrase.find("le")
+print(indice)
+# Résultat : 8
+
+isalpha(), isdigit(), isalnum(), isspace() : Vérifient si la chaîne est composée uniquement de lettres, de chiffres, d'alphanumériques ou d'espaces respectivement.
+chaine_alpha = "Python"
+chaine_digit = "123"
+chaine_alnum = "Python123"
+chaine_space = "   "
+
+print(chaine_alpha.isalpha())   # True
+print(chaine_digit.isdigit())   # True
+print(chaine_alnum.isalnum())   # True
+print(chaine_space.isspace())   # True
+
+join(iterable) : Concatène les éléments de l'itérable avec la chaîne en tant que séparateur.
+mots = ["Bonjour", "le", "monde"]
+phrase = " ".join(mots)
+print(phrase)
+# Résultat : "Bonjour le monde"
+
+splitlines([keepends]) : Divise la chaîne en une liste de lignes. L'argument optionnel keepends (par défaut False) indique si les fins de ligne doivent être incluses.
+texte_multiligne = "Ceci est\nune phrase\nsur plusieurs lignes."
+lignes = texte_multiligne.splitlines()
+print(lignes)
+# Résultat : ['Ceci est', 'une phrase', 'sur plusieurs lignes.']
+
+center(width[, fillchar]) : Centre la chaîne dans une zone de largeur spécifiée. L'argument optionnel fillchar (par défaut un espace) spécifie le caractère de remplissage
+phrase = "Python"
+phrase_centree = phrase.center(10, '*')
+print(phrase_centree)
+# Résultat : "**Python**"
+
+ljust(width[, fillchar]) et rjust(width[, fillchar]) : Alignent la chaîne à gauche ou à droite dans une zone de largeur spécifiée. L'argument optionnel fillchar (par défaut un espace) spécifie le caractère de remplissage
+phrase = "Python"
+phrase_gauche = phrase.ljust(10, '-')
+phrase_droite = phrase.rjust(10, '-')
+print(phrase_gauche, phrase_droite)
+# Résultat : "Python----" "----Python"
+ 
+encode(encoding[, errors]) : Encode la chaîne en utilisant un encodage spécifié. C'est utile pour convertir une chaîne en une séquence d'octets.
+phrase = "Bonjour le monde"
+encodage = phrase.encode('utf-8')
+print(encodage)
+# Résultat : b'Bonjour le monde'
+
+zfill(width) : Remplit la chaîne avec des zéros à gauche pour atteindre une largeur spécifiée.
+nombre = "42"
+nombre_zfilled = nombre.zfill(5)
+print(nombre_zfilled)
+# Résultat : "00042"
+
+expandtabs(tabsize=8) : Remplace les caractères de tabulation par des espaces. L'argument optionnel tabsize spécifie la largeur des tabulations (par défaut 8).
+texte_tabule = "Python\test\tgénial"
+texte_etendu = texte_tabule.expandtabs(4)
+print(texte_etendu)
+# Résultat : "Python  est génial"
+
+swapcase() : Inverse la casse de chaque caractère dans la chaîne (majuscules deviennent minuscules et vice versa).
+phrase = "BoNjoUr Le MoNde"
+phrase_inverse_case = phrase.swapcase()
+print(phrase_inverse_case)
+# Résultat : "bOnJOuR lE mOnDE"
+
+title() : Convertit la première lettre de chaque mot en majuscule.
+phrase = "python est génial"
+phrase_titree = phrase.title()
+print(phrase_titree)
+# Résultat : "Python Est Génial"
+
